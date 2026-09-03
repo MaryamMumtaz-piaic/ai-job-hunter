@@ -55,12 +55,12 @@ async function handleResumeUpload(file, zone) {
     fd.append('file', file);
     fd.append('type', 'resume');
     const data = await window.api.postForm('/api/resume/upload', fd);
-    resumeFileId = data.file_id;
+    resumeFileId = data.file_name;
     setZoneDone(zone, file.name, 'resume');
     window.showToast('Resume uploaded successfully!', 'success');
     enableStep2Button();
     // Analyze resume in background to prefill skills
-    analyzeResumeBackground(data.file_id);
+    analyzeResumeBackground(data.file_name);
   } catch (err) {
     setZoneError(zone);
     window.showToast(err.message || 'Upload failed. Try again.', 'error');
@@ -76,7 +76,7 @@ async function handlePortfolioUpload(file, zone) {
     fd.append('file', file);
     fd.append('type', 'portfolio');
     const data = await window.api.postForm('/api/resume/upload', fd);
-    portfolioFileId = data.file_id;
+    portfolioFileId = data.file_name;
     setZoneDone(zone, file.name, 'portfolio');
     window.showToast('Portfolio uploaded!', 'success');
   } catch (err) {
@@ -128,16 +128,17 @@ function setZoneError(zone) {
 }
 
 /* ── Background Resume Analysis (prefill skills) ── */
-async function analyzeResumeBackground(fileId) {
+async function analyzeResumeBackground(fileName) {
   try {
-    const data = await window.api.post('/api/resume/analyze', { file_id: fileId });
-    if (data.skills && data.skills.length) {
-      extractedSkills = data.skills;
+    const data = await window.api.post('/api/resume/analyze', { file_name: fileName });
+    const profile = data.profile || data;
+    if (profile.skills && profile.skills.length) {
+      extractedSkills = profile.skills;
       if (skillsTagInput) skillsTagInput.setTags(extractedSkills);
     }
-    if (data.job_titles && data.job_titles.length && titlesTagInput) {
+    if (profile.job_titles && profile.job_titles.length && titlesTagInput) {
       const existing = titlesTagInput.getTags();
-      if (!existing.length) titlesTagInput.setTags(data.job_titles.slice(0, 3));
+      if (!existing.length) titlesTagInput.setTags(profile.job_titles.slice(0, 3));
     }
   } catch (_) { /* silent — user can fill manually */ }
 }
@@ -220,7 +221,7 @@ async function startAnalysis() {
 
   // Save preferences
   try {
-    await window.api.post('/api/profile/preferences', prefs);
+    await window.api.put('/api/preferences', prefs);
     window.showToast('Preferences saved!', 'success');
   } catch (_) {}
 
