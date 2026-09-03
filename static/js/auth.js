@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.setButtonLoading(btn, true, 'Creating account…');
 
       try {
-        await window.api.post('/api/auth/signup', { full_name: name, email, password });
+        await window.api.post('/api/auth/signup', { full_name: name, email, password, confirm_password: confirm });
         window.showToast('Account created! Please sign in.', 'success');
         setTimeout(() => { window.location.href = '/signin'; }, 1200);
       } catch (err) {

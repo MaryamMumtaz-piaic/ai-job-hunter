@@ -50,7 +50,14 @@ window.api = {
     });
     if (!r.ok) {
       let msg = 'Request failed';
-      try { const d = await r.json(); msg = d.detail || d.message || msg; } catch {}
+      try {
+        const d = await r.json();
+        if (d.errors && typeof d.errors === 'object') {
+          msg = Object.values(d.errors)[0] || d.message || msg;
+        } else {
+          msg = d.detail || d.message || msg;
+        }
+      } catch {}
       throw new Error(msg);
     }
     return r.json();
