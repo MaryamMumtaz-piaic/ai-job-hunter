@@ -7,23 +7,22 @@ import re
 from datetime import datetime
 
 try:
-    from passlib.context import CryptContext
-    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+    import bcrypt as _bcrypt
     def hash_password(pw: str) -> str:
-        return pwd_context.hash(pw)
+        return _bcrypt.hashpw(pw.encode("utf-8"), _bcrypt.gensalt()).decode("utf-8")
     def verify_password(plain: str, hashed: str) -> bool:
-        return pwd_context.verify(plain, hashed)
+        return _bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
 except ImportError:
     import hashlib, os
     def hash_password(pw: str) -> str:
         salt = os.urandom(16).hex()
         h = hashlib.sha256((salt + pw).encode()).hexdigest()
-        return f"{salt}:{h}"
+        return f"sha256:{salt}:{h}"
     def verify_password(plain: str, hashed: str) -> bool:
-        parts = hashed.split(":", 1)
-        if len(parts) != 2:
+        parts = hashed.split(":", 2)
+        if len(parts) != 3 or parts[0] != "sha256":
             return False
-        salt, h = parts
+        _, salt, h = parts
         return hashlib.sha256((salt + plain).encode()).hexdigest() == h
 
 router = APIRouter()
@@ -39,8 +38,13 @@ async def api_signup(request: Request):
         password = body.get("password", "")
         confirm_password = body.get("confirm_password", "")
 
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.info(f"SIGNUP attempt: full_name={repr(full_name)}, email={repr(email)}, pw_len={len(password)}, confirm_len={len(confirm_password)}")
+
         errors = _validate_signup(full_name, email, password, confirm_password)
         if errors:
+            logger.warning(f"SIGNUP validation errors: {errors}")
             return JSONResponse({"success": False, "errors": errors}, status_code=400)
 
         users = JSONStore("app/data/users.json")

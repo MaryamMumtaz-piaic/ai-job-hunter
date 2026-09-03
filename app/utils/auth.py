@@ -1,16 +1,24 @@
 from fastapi import Request, HTTPException
 from fastapi.responses import RedirectResponse
-from passlib.context import CryptContext
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-
-def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
-
-
-def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+try:
+    import bcrypt as _bcrypt
+    def hash_password(password: str) -> str:
+        return _bcrypt.hashpw(password.encode("utf-8"), _bcrypt.gensalt()).decode("utf-8")
+    def verify_password(plain: str, hashed: str) -> bool:
+        return _bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
+except ImportError:
+    import hashlib, os
+    def hash_password(password: str) -> str:
+        salt = os.urandom(16).hex()
+        h = hashlib.sha256((salt + password).encode()).hexdigest()
+        return f"sha256:{salt}:{h}"
+    def verify_password(plain: str, hashed: str) -> bool:
+        parts = hashed.split(":", 2)
+        if len(parts) != 3 or parts[0] != "sha256":
+            return False
+        _, salt, h = parts
+        return hashlib.sha256((salt + plain).encode()).hexdigest() == h
 
 
 def get_current_user(request: Request) -> dict | None:
