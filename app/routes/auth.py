@@ -30,7 +30,7 @@ router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
 
-@router.post("/api/auth/signup")
+@router.post("/signup")
 async def api_signup(request: Request):
     try:
         body = await request.json()
@@ -68,7 +68,7 @@ async def api_signup(request: Request):
         return JSONResponse({"success": False, "errors": {"general": "Registration failed. Please try again."}}, status_code=500)
 
 
-@router.post("/api/auth/signin")
+@router.post("/signin")
 async def api_signin(request: Request):
     try:
         body = await request.json()
@@ -98,7 +98,7 @@ async def api_signin(request: Request):
         return JSONResponse({"success": False, "errors": {"general": "Login failed. Please try again."}}, status_code=500)
 
 
-@router.post("/api/auth/logout")
+@router.post("/logout")
 async def api_logout(request: Request):
     request.session.clear()
     return JSONResponse({"success": True, "redirect": "/"})

@@ -10,7 +10,7 @@ router = APIRouter()
 VALID_STATUSES = ["Draft", "Pending Approval", "Approved", "Submitted", "Interview", "Rejected", "Offer"]
 
 
-@router.post("/api/applications")
+@router.post("")
 async def create_application(request: Request):
     user = get_current_user(request)
     if not user:
@@ -70,7 +70,7 @@ async def create_application(request: Request):
         return JSONResponse({"success": False, "message": "Failed to create application"}, status_code=500)
 
 
-@router.get("/api/applications")
+@router.get("")
 async def list_applications(request: Request):
     user = get_current_user(request)
     if not user:
@@ -89,7 +89,7 @@ async def list_applications(request: Request):
     return JSONResponse({"success": True, "applications": apps})
 
 
-@router.get("/api/applications/{application_id}")
+@router.get("/{application_id}")
 async def get_application(request: Request, application_id: str):
     user = get_current_user(request)
     if not user:
@@ -110,7 +110,7 @@ async def get_application(request: Request, application_id: str):
     return JSONResponse({"success": True, "application": app})
 
 
-@router.put("/api/applications/{application_id}")
+@router.put("/{application_id}")
 async def update_application(request: Request, application_id: str):
     user = get_current_user(request)
     if not user:
@@ -140,7 +140,7 @@ async def update_application(request: Request, application_id: str):
         return JSONResponse({"success": False, "message": "Failed to update application"}, status_code=500)
 
 
-@router.post("/api/applications/{application_id}/approve")
+@router.post("/{application_id}/approve")
 async def approve_application(request: Request, application_id: str):
     user = get_current_user(request)
     if not user:
@@ -164,7 +164,7 @@ async def approve_application(request: Request, application_id: str):
     return JSONResponse({"success": True, "message": "Application approved and submitted successfully!"})
 
 
-@router.post("/api/cover-letter/generate")
+@router.post("/cover-letter/generate")
 async def generate_cover_letter(request: Request):
     user = get_current_user(request)
     if not user:
@@ -183,17 +183,16 @@ async def generate_cover_letter(request: Request):
         latest_resume = resume_data[-1] if resume_data else {}
 
         from app.services.openai_service import generate_cover_letter as ai_generate
-        cover_letter = await ai_generate(
+        cover_letter = ai_generate(
             candidate_profile=latest_resume,
             candidate_name=user.get("full_name", ""),
             job=job or {},
         )
 
-        # Save to application if provided
         if application_id:
             apps_store = JSONStore("app/data/applications.json")
-            app = apps_store.find_by_id(application_id)
-            if app and app.get("user_id") == user["id"]:
+            existing_app = apps_store.find_by_id(application_id)
+            if existing_app and existing_app.get("user_id") == user["id"]:
                 apps_store.update(application_id, {
                     "cover_letter": cover_letter,
                     "updated_at": datetime.utcnow().isoformat(),

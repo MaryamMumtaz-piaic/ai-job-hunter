@@ -32,11 +32,14 @@ class JSONStore:
         with self._lock:
             self._write_raw(data)
 
-    def find(self, key: str, value: Any) -> dict | None:
+    def find(self, key_or_predicate, value: Any = None) -> list | dict | None:
+        """find(predicate) → list; find(key, value) → first match or None."""
         with self._lock:
             data = self._read_raw()
+            if callable(key_or_predicate):
+                return [item for item in data if key_or_predicate(item)]
             for item in data:
-                if item.get(key) == value:
+                if item.get(key_or_predicate) == value:
                     return item
             return None
 

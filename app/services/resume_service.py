@@ -5,25 +5,23 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def process_resume(user_id: str, file_path: str, portfolio_path: str = "") -> dict:
+def extract_resume_text(file_path: str) -> str:
     from app.utils.file_parser import parse_file
+    try:
+        return parse_file(file_path)
+    except Exception as e:
+        logger.error(f"Failed to parse file {file_path}: {e}")
+        return ""
+
+
+def process_resume(user_id: str, file_path: str, portfolio_path: str = "") -> dict:
     from app.services.openai_service import analyze_resume
     from app.utils.json_store import JSONStore
 
     store = JSONStore("app/data/resumes.json")
 
-    try:
-        resume_text = parse_file(file_path) if file_path else ""
-    except Exception as e:
-        logger.error(f"Failed to parse resume file: {e}")
-        resume_text = ""
-
-    portfolio_text = ""
-    if portfolio_path:
-        try:
-            portfolio_text = parse_file(portfolio_path)
-        except Exception as e:
-            logger.error(f"Failed to parse portfolio file: {e}")
+    resume_text = extract_resume_text(file_path) if file_path else ""
+    portfolio_text = extract_resume_text(portfolio_path) if portfolio_path else ""
 
     combined_text = resume_text
     if portfolio_text:
@@ -37,15 +35,17 @@ def process_resume(user_id: str, file_path: str, portfolio_path: str = "") -> di
 
     now = datetime.datetime.utcnow().isoformat()
 
-    existing = store.find_one({"user_id": user_id})
+    existing_list = store.find(lambda r: r.get("user_id") == user_id)
+    existing = existing_list[-1] if existing_list else None
 
     resume_record = {
         "id": existing["id"] if existing else str(uuid.uuid4()),
         "user_id": user_id,
         "file_path": file_path,
         "portfolio_path": portfolio_path or "",
-        "resume_text": resume_text[:5000],
+        "raw_text": resume_text[:5000],
         "analyzed_at": now,
+        "matched_jobs": existing.get("matched_jobs", []) if existing else [],
         "name": extracted.get("name", ""),
         "email": extracted.get("email", ""),
         "summary": extracted.get("summary", ""),
@@ -59,7 +59,7 @@ def process_resume(user_id: str, file_path: str, portfolio_path: str = "") -> di
     }
 
     if existing:
-        store.update({"user_id": user_id}, resume_record)
+        store.update(existing["id"], resume_record)
     else:
         store.append(resume_record)
 

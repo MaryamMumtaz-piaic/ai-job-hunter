@@ -14,8 +14,12 @@ def verify_password(plain: str, hashed: str) -> bool:
 
 
 def get_current_user(request: Request) -> dict | None:
-    user = request.session.get("user")
-    return user if user else None
+    user_id = request.session.get("user_id")
+    if not user_id:
+        return None
+    from app.utils.json_store import JSONStore
+    users = JSONStore("app/data/users.json")
+    return users.find_by_id(user_id)
 
 
 def require_auth(request: Request) -> dict:

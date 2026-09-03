@@ -8,7 +8,7 @@ import uuid
 router = APIRouter()
 
 
-@router.get("/api/jobs")
+@router.get("")
 async def list_jobs(
     request: Request,
     search: str = "",
@@ -75,7 +75,7 @@ async def list_jobs(
     })
 
 
-@router.get("/api/jobs/saved")
+@router.get("/saved")
 async def get_saved_jobs(request: Request):
     user = get_current_user(request)
     if not user:
@@ -89,7 +89,7 @@ async def get_saved_jobs(request: Request):
     return JSONResponse({"success": True, "jobs": saved})
 
 
-@router.get("/api/jobs/{job_id}")
+@router.get("/{job_id}")
 async def get_job(request: Request, job_id: str):
     user = get_current_user(request)
     if not user:
@@ -118,7 +118,7 @@ async def get_job(request: Request, job_id: str):
     return JSONResponse({"success": True, "job": job})
 
 
-@router.post("/api/jobs/analyze")
+@router.post("/analyze")
 async def analyze_jobs(request: Request):
     user = get_current_user(request)
     if not user:
@@ -139,8 +139,8 @@ async def analyze_jobs(request: Request):
         latest_resume = resume_data[-1]
         latest_prefs = prefs_data[-1] if prefs_data else {}
 
-        from app.services.job_matching_service import match_jobs
-        matched = await match_jobs(latest_resume, latest_prefs)
+        from app.services.job_matching_service import run_matching
+        matched = run_matching(user["id"], latest_prefs or {})
 
         # Save matched jobs to resume record
         resumes_store.update(latest_resume["id"], {"matched_jobs": matched})
@@ -168,7 +168,7 @@ async def analyze_jobs(request: Request):
         return JSONResponse({"success": False, "message": "Job analysis failed. Please try again."}, status_code=500)
 
 
-@router.post("/api/jobs/{job_id}/save")
+@router.post("/{job_id}/save")
 async def toggle_save_job(request: Request, job_id: str):
     user = get_current_user(request)
     if not user:

@@ -14,7 +14,7 @@ ALLOWED_EXTENSIONS = {".pdf", ".docx", ".txt", ".doc"}
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
 
 
-@router.get("/api/profile")
+@router.get("/profile")
 async def get_profile(request: Request):
     user = get_current_user(request)
     if not user:
@@ -31,7 +31,7 @@ async def get_profile(request: Request):
     })
 
 
-@router.put("/api/profile")
+@router.put("/profile")
 async def update_profile(request: Request):
     user = get_current_user(request)
     if not user:
@@ -68,7 +68,7 @@ async def update_profile(request: Request):
         return JSONResponse({"success": False, "message": "Failed to update profile"}, status_code=500)
 
 
-@router.post("/api/resume/upload")
+@router.post("/resume/upload")
 async def upload_resume(request: Request, file: UploadFile = File(...)):
     user = get_current_user(request)
     if not user:
@@ -110,7 +110,7 @@ async def upload_resume(request: Request, file: UploadFile = File(...)):
         return JSONResponse({"success": False, "message": "Upload failed. Please try again."}, status_code=500)
 
 
-@router.post("/api/resume/analyze")
+@router.post("/resume/analyze")
 async def analyze_resume(request: Request):
     user = get_current_user(request)
     if not user:
@@ -131,7 +131,7 @@ async def analyze_resume(request: Request):
         from app.services.openai_service import analyze_resume as ai_analyze
 
         text = extract_resume_text(file_path)
-        profile = await ai_analyze(text)
+        profile = ai_analyze(text)
 
         resumes_store = JSONStore("app/data/resumes.json")
         resume_id = str(uuid.uuid4())
@@ -153,7 +153,7 @@ async def analyze_resume(request: Request):
         return JSONResponse({"success": False, "message": "Resume analysis failed. Please try again."}, status_code=500)
 
 
-@router.get("/api/preferences")
+@router.get("/preferences")
 async def get_preferences(request: Request):
     user = get_current_user(request)
     if not user:
@@ -166,7 +166,7 @@ async def get_preferences(request: Request):
     return JSONResponse({"success": True, "preferences": latest})
 
 
-@router.put("/api/preferences")
+@router.put("/preferences")
 async def save_preferences(request: Request):
     user = get_current_user(request)
     if not user:
