@@ -1,0 +1,391 @@
+{% extends "base.html" %}
+{% block title %}Profile — AI Job Hunter{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="mb-6">
+    <h1 class="text-3xl font-extrabold text-gray-900">Profile</h1>
+    <p class="text-gray-500 mt-1">Manage your professional information and preferences</p>
+  </div>
+
+  <div class="grid lg:grid-cols-4 gap-6">
+
+    <!-- Left Sidebar -->
+    <div class="lg:col-span-1 space-y-4">
+      <!-- Avatar Card -->
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-extrabold text-3xl mx-auto mb-3">
+          {{ user.name[0].upper() if user.name else 'U' }}
+        </div>
+        <h2 class="font-bold text-gray-900 text-lg">{{ user.name }}</h2>
+        <p class="text-gray-500 text-sm">{{ user.email }}</p>
+        {% if profile.summary %}
+        <p class="text-gray-500 text-xs mt-2 leading-relaxed">{{ profile.summary[:100] }}{{ '...' if profile.summary|length > 100 else '' }}</p>
+        {% endif %}
+        <div class="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-400">
+          Member since {{ user.created_at[:7] if user.created_at else '2026' }}
+        </div>
+      </div>
+
+      <!-- Profile Sections Nav -->
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-3">
+        {% set sections = [
+          ('personal', '👤', 'Personal Info'),
+          ('summary', '📝', 'Summary'),
+          ('skills', '⚡', 'Skills'),
+          ('experience', '💼', 'Experience'),
+          ('education', '🎓', 'Education'),
+          ('documents', '📎', 'Resume & Portfolio'),
+          ('preferences', '⚙️', 'Preferences')
+        ] %}
+        {% for id, icon, label in sections %}
+        <a href="#{{ id }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-indigo-50 text-gray-600 hover:text-indigo-600 transition text-sm font-medium">
+          <span class="text-base">{{ icon }}</span>
+          {{ label }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="lg:col-span-3 space-y-4">
+
+      <!-- Personal Information -->
+      <div id="personal" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2">👤 Personal Information</h3>
+          <button onclick="toggleEdit('personal-form')" class="text-indigo-600 text-sm font-semibold hover:underline" id="personal-edit-btn">Edit</button>
+        </div>
+        <div id="personal-view" class="grid sm:grid-cols-2 gap-4 text-sm">
+          {% for label, value in [
+            ('Full Name', user.name),
+            ('Email', user.email),
+            ('Phone', profile.phone or '—'),
+            ('Location', profile.location or '—'),
+            ('LinkedIn', profile.linkedin or '—'),
+            ('GitHub', profile.github or '—')
+          ] %}
+          <div>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{{ label }}</p>
+            <p class="text-gray-900 font-medium">{{ value }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        <form id="personal-form" class="hidden" onsubmit="saveSection(event, 'personal')">
+          <div class="grid sm:grid-cols-2 gap-4">
+            {% for name, label, type, value in [
+              ('name', 'Full Name', 'text', user.name),
+              ('email', 'Email', 'email', user.email),
+              ('phone', 'Phone', 'tel', profile.phone or ''),
+              ('location', 'Location', 'text', profile.location or ''),
+              ('linkedin', 'LinkedIn URL', 'url', profile.linkedin or ''),
+              ('github', 'GitHub URL', 'url', profile.github or '')
+            ] %}
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">{{ label }}</label>
+              <input type="{{ type }}" name="{{ name }}" value="{{ value }}"
+                class="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            {% endfor %}
+          </div>
+          <div class="flex gap-2 mt-4">
+            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition">Save Changes</button>
+            <button type="button" onclick="toggleEdit('personal-form')" class="px-4 py-2 border border-gray-200 text-gray-600 text-sm rounded-lg hover:bg-gray-50 transition">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Professional Summary -->
+      <div id="summary" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2">📝 Professional Summary</h3>
+          <button onclick="toggleEdit('summary-form')" class="text-indigo-600 text-sm font-semibold hover:underline">Edit</button>
+        </div>
+        <div id="summary-view">
+          {% if profile.summary %}
+          <p class="text-gray-600 text-sm leading-relaxed">{{ profile.summary }}</p>
+          {% else %}
+          <p class="text-gray-400 text-sm italic">No summary added. Upload your resume or write one manually.</p>
+          {% endif %}
+        </div>
+        <form id="summary-form" class="hidden" onsubmit="saveSection(event, 'summary')">
+          <textarea name="summary" rows="5"
+            class="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+            placeholder="Write a brief professional summary...">{{ profile.summary or '' }}</textarea>
+          <div class="flex gap-2 mt-3">
+            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition">Save</button>
+            <button type="button" onclick="toggleEdit('summary-form')" class="px-4 py-2 border border-gray-200 text-gray-600 text-sm rounded-lg hover:bg-gray-50 transition">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Skills -->
+      <div id="skills" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2">⚡ Skills</h3>
+          <button onclick="toggleSkillsEdit()" class="text-indigo-600 text-sm font-semibold hover:underline" id="skills-edit-btn">Edit</button>
+        </div>
+        <div id="skills-view" class="flex flex-wrap gap-2">
+          {% if profile.skills %}
+            {% for skill in profile.skills %}
+            <span class="bg-indigo-50 text-indigo-700 text-sm px-3 py-1 rounded-full font-medium border border-indigo-100">{{ skill }}</span>
+            {% endfor %}
+          {% else %}
+          <p class="text-gray-400 text-sm italic">No skills added yet. Upload your resume to extract skills automatically.</p>
+          {% endif %}
+        </div>
+        <div id="skills-edit" class="hidden">
+          <div id="skills-tags-edit" class="flex flex-wrap gap-2 mb-3 min-h-8">
+            {% for skill in (profile.skills or []) %}
+            <span class="skill-tag bg-indigo-50 text-indigo-700 text-sm px-3 py-1 rounded-full font-medium border border-indigo-100 flex items-center gap-1">
+              {{ skill }}
+              <button type="button" onclick="removeSkillTag(this)" class="text-indigo-400 hover:text-red-500 ml-1">×</button>
+            </span>
+            {% endfor %}
+          </div>
+          <div class="flex gap-2 mb-3">
+            <input type="text" id="profile-skill-input" placeholder="Add a skill"
+              class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <button type="button" onclick="addProfileSkill()" class="px-3 py-2 bg-indigo-50 text-indigo-600 font-semibold text-sm rounded-lg hover:bg-indigo-100 transition">Add</button>
+          </div>
+          <input type="hidden" id="profile-skills-hidden">
+          <div class="flex gap-2">
+            <button type="button" onclick="saveSkills()" class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition">Save</button>
+            <button type="button" onclick="toggleSkillsEdit()" class="px-4 py-2 border border-gray-200 text-gray-600 text-sm rounded-lg hover:bg-gray-50 transition">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div id="experience" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2 mb-5">💼 Experience</h3>
+        {% if profile.experience %}
+        <div class="space-y-4">
+          {% for exp in profile.experience %}
+          <div class="border-l-2 border-indigo-200 pl-4 py-1">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="font-semibold text-gray-900">{{ exp.title }}</p>
+                <p class="text-indigo-600 font-medium text-sm">{{ exp.company }}</p>
+                <p class="text-gray-400 text-xs mt-0.5">{{ exp.duration }}</p>
+              </div>
+            </div>
+            {% if exp.description %}
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">{{ exp.description }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-8">
+          <p class="text-gray-400 text-sm italic">No experience added. Upload your resume to extract experience automatically.</p>
+          <a href="/analyze" class="inline-block mt-3 text-indigo-600 text-sm font-semibold hover:underline">Upload Resume</a>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Education -->
+      <div id="education" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2 mb-5">🎓 Education</h3>
+        {% if profile.education %}
+        <div class="space-y-4">
+          {% for edu in profile.education %}
+          <div class="border-l-2 border-purple-200 pl-4 py-1">
+            <p class="font-semibold text-gray-900">{{ edu.degree }}</p>
+            <p class="text-purple-600 font-medium text-sm">{{ edu.institution }}</p>
+            <p class="text-gray-400 text-xs mt-0.5">{{ edu.year }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-gray-400 text-sm italic text-center py-6">No education added. Upload your resume to extract education automatically.</p>
+        {% endif %}
+      </div>
+
+      <!-- Resume & Portfolio -->
+      <div id="documents" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2 mb-5">📎 Resume & Portfolio</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <!-- Resume -->
+          <div class="border border-gray-100 rounded-xl p-4">
+            <p class="text-sm font-semibold text-gray-700 mb-3">Resume</p>
+            {% if resume and resume.filename %}
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-9 h-9 bg-green-100 rounded-lg flex items-center justify-center text-lg">📄</div>
+              <div>
+                <p class="text-sm font-medium text-gray-900 truncate max-w-[140px]">{{ resume.filename }}</p>
+                <p class="text-xs text-green-600">Uploaded ✓</p>
+              </div>
+            </div>
+            {% else %}
+            <div class="text-center py-4 text-gray-400 text-sm">
+              <div class="text-2xl mb-2">📄</div>
+              <p>No resume uploaded</p>
+            </div>
+            {% endif %}
+            <a href="/analyze" class="block w-full text-center py-2 border border-indigo-200 text-indigo-600 text-sm font-semibold rounded-lg hover:bg-indigo-50 transition">
+              {{ 'Update Resume' if resume else 'Upload Resume' }}
+            </a>
+          </div>
+
+          <!-- Portfolio -->
+          <div class="border border-gray-100 rounded-xl p-4">
+            <p class="text-sm font-semibold text-gray-700 mb-3">Portfolio</p>
+            {% if resume and resume.portfolio_filename %}
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center text-lg">📁</div>
+              <div>
+                <p class="text-sm font-medium text-gray-900 truncate max-w-[140px]">{{ resume.portfolio_filename }}</p>
+                <p class="text-xs text-green-600">Uploaded ✓</p>
+              </div>
+            </div>
+            {% else %}
+            <div class="text-center py-4 text-gray-400 text-sm">
+              <div class="text-2xl mb-2">📁</div>
+              <p>No portfolio uploaded</p>
+            </div>
+            {% endif %}
+            <a href="/analyze" class="block w-full text-center py-2 border border-purple-200 text-purple-600 text-sm font-semibold rounded-lg hover:bg-purple-50 transition">
+              {{ 'Update Portfolio' if (resume and resume.portfolio_filename) else 'Upload Portfolio' }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Preferences -->
+      <div id="preferences" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2">⚙️ Job Preferences</h3>
+          <button onclick="toggleEdit('prefs-form')" class="text-indigo-600 text-sm font-semibold hover:underline">Edit</button>
+        </div>
+        {% if preferences %}
+        <div id="prefs-view" class="grid sm:grid-cols-2 gap-4 text-sm">
+          {% for label, value in [
+            ('Work Mode', preferences.work_mode),
+            ('Experience Level', preferences.experience_level),
+            ('Country', preferences.country),
+            ('Salary Range', '$' ~ preferences.salary_min ~ ' – $' ~ preferences.salary_max if preferences.salary_min else 'Any')
+          ] %}
+          <div>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{{ label }}</p>
+            <p class="text-gray-900 font-medium">{{ value or '—' }}</p>
+          </div>
+          {% endfor %}
+          {% if preferences.desired_titles %}
+          <div class="sm:col-span-2">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Desired Titles</p>
+            <div class="flex flex-wrap gap-1.5">
+              {% for title in preferences.desired_titles %}
+              <span class="bg-indigo-50 text-indigo-700 text-xs px-2.5 py-1 rounded-full font-medium">{{ title }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        <form id="prefs-form" class="hidden" onsubmit="saveSection(event, 'preferences')">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">Work Mode</label>
+              <select name="work_mode" class="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                {% for m in ['Remote','Hybrid','On-site','Any'] %}
+                <option value="{{ m }}" {{ 'selected' if preferences.work_mode == m else '' }}>{{ m }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">Experience Level</label>
+              <select name="experience_level" class="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                {% for l in ['Any','Intern','Entry Level','Mid Level','Senior','Lead'] %}
+                <option value="{{ l }}" {{ 'selected' if preferences.experience_level == l else '' }}>{{ l }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">Country</label>
+              <input type="text" name="country" value="{{ preferences.country or '' }}" class="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">Min Salary</label>
+              <input type="number" name="salary_min" value="{{ preferences.salary_min or '' }}" class="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition">Save</button>
+            <button type="button" onclick="toggleEdit('prefs-form')" class="px-4 py-2 border border-gray-200 text-gray-600 text-sm rounded-lg hover:bg-gray-50 transition">Cancel</button>
+          </div>
+        </form>
+        {% else %}
+        <div class="text-center py-8">
+          <p class="text-gray-400 text-sm italic mb-3">No preferences set. Set them during resume analysis.</p>
+          <a href="/analyze" class="inline-block text-indigo-600 text-sm font-semibold hover:underline">Set Preferences</a>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function toggleEdit(formId) {
+  const form = document.getElementById(formId);
+  const view = document.getElementById(formId.replace('-form', '-view'));
+  if (form) form.classList.toggle('hidden');
+  if (view) view.classList.toggle('hidden');
+}
+
+function saveSection(event, section) {
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+  fetch('/api/profile', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({section, ...data})
+  }).then(r => r.json()).then(d => {
+    window.showToast && showToast('Profile updated!', 'success');
+    setTimeout(() => location.reload(), 700);
+  }).catch(() => window.showToast && showToast('Error saving profile', 'error'));
+}
+
+function toggleSkillsEdit() {
+  document.getElementById('skills-view').classList.toggle('hidden');
+  document.getElementById('skills-edit').classList.toggle('hidden');
+}
+
+function addProfileSkill() {
+  const input = document.getElementById('profile-skill-input');
+  const val = input.value.trim();
+  if (!val) return;
+  const container = document.getElementById('skills-tags-edit');
+  const span = document.createElement('span');
+  span.className = 'skill-tag bg-indigo-50 text-indigo-700 text-sm px-3 py-1 rounded-full font-medium border border-indigo-100 flex items-center gap-1';
+  span.innerHTML = `${val} <button type="button" onclick="removeSkillTag(this)" class="text-indigo-400 hover:text-red-500 ml-1">×</button>`;
+  container.appendChild(span);
+  input.value = '';
+}
+
+function removeSkillTag(btn) {
+  btn.closest('.skill-tag').remove();
+}
+
+function saveSkills() {
+  const skills = Array.from(document.querySelectorAll('#skills-tags-edit .skill-tag')).map(s => s.textContent.replace('×','').trim());
+  fetch('/api/profile', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({section: 'skills', skills})
+  }).then(r => r.json()).then(() => {
+    window.showToast && showToast('Skills updated!', 'success');
+    setTimeout(() => location.reload(), 700);
+  }).catch(() => window.showToast && showToast('Error saving skills', 'error'));
+}
+
+document.getElementById('profile-skill-input')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); addProfileSkill(); }
+});
+</script>
+{% endblock %}
