@@ -47,11 +47,11 @@
             <a href="/dashboard" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition">Dashboard</a>
             <!-- Avatar Dropdown -->
             <div class="relative ml-2" id="avatar-menu-container">
-              <button id="avatar-btn" class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full bg-indigo-50 hover:bg-indigo-100 transition border border-indigo-100">
+              <button id="avatar-menu-btn" class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full bg-indigo-50 hover:bg-indigo-100 transition border border-indigo-100">
                 <div class="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold">
-                  {{ user.name[0].upper() if user.name else 'U' }}
+                  {{ user.full_name[0].upper() if user.full_name else 'U' }}
                 </div>
-                <span class="text-sm font-medium text-gray-700">{{ user.name.split()[0] if user.name else 'User' }}</span>
+                <span class="text-sm font-medium text-gray-700">{{ user.full_name.split()[0] if user.full_name else 'User' }}</span>
                 <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
@@ -133,6 +133,16 @@
   </main>
 
   <script src="/static/js/main.js?v=3"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
   {% block scripts %}{% endblock %}
 </body>
 </html>
