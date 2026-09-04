@@ -26,6 +26,15 @@ async def list_jobs(
     jobs_store = JSONStore("app/data/jobs.json")
     jobs = jobs_store.read()
 
+    # Default country to user's saved preference when no explicit filter given
+    if not country:
+        prefs_store = JSONStore("app/data/preferences.json")
+        prefs_data = prefs_store.find(lambda p: p.get("user_id") == user["id"])
+        if prefs_data:
+            saved_country = prefs_data[-1].get("country", "Any")
+            if saved_country and saved_country != "Any":
+                country = saved_country
+
     # Apply filters
     if search:
         search_lower = search.lower()
@@ -58,7 +67,7 @@ async def list_jobs(
     if resume_data:
         latest = resume_data[-1]
         for m in latest.get("matched_jobs", []):
-            match_map[m.get("job_id")] = m
+            match_map[m.get("job_id") or m.get("id", "")] = m
 
     for job in paginated:
         job["is_saved"] = job["id"] in saved_jobs
@@ -108,7 +117,7 @@ async def get_job(request: Request, job_id: str):
     if resume_data:
         latest = resume_data[-1]
         for m in latest.get("matched_jobs", []):
-            if m.get("job_id") == job_id:
+            if (m.get("job_id") or m.get("id")) == job_id:
                 job["match_score"] = m.get("match_score", 0)
                 job["match_reason"] = m.get("match_reason", "")
                 job["matched_skills"] = m.get("matched_skills", [])
@@ -148,13 +157,14 @@ async def analyze_jobs(request: Request):
         jobs_store = JSONStore("app/data/jobs.json")
         result_jobs = []
         for m in matched[:50]:
-            job = jobs_store.find_by_id(m.get("job_id", ""))
+            job_id_key = m.get("job_id") or m.get("id", "")
+            job = jobs_store.find_by_id(job_id_key)
             if job:
                 job["match_score"] = m.get("match_score", 0)
                 job["match_reason"] = m.get("match_reason", "")
                 job["matched_skills"] = m.get("matched_skills", [])
                 job["missing_skills"] = m.get("missing_skills", [])
-                job["is_saved"] = m.get("job_id") in user.get("saved_jobs", [])
+                job["is_saved"] = job_id_key in user.get("saved_jobs", [])
                 result_jobs.append(job)
 
         return JSONResponse({

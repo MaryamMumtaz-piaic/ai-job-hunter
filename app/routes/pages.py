@@ -54,7 +54,8 @@ async def dashboard(request: Request):
         latest_resume = resume_data[-1]
         matched = latest_resume.get("matched_jobs", [])[:5]
         for m in matched:
-            job = jobs_store.find_by_id(m.get("job_id", ""))
+            job_id_key = m.get("job_id") or m.get("id", "")
+            job = jobs_store.find_by_id(job_id_key)
             if job:
                 job["match_score"] = m.get("match_score", 0)
                 job["match_reason"] = m.get("match_reason", "")

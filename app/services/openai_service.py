@@ -89,56 +89,26 @@ def analyze_resume(resume_text: str) -> dict:
 
 
 def _local_prefilter(candidate_profile: dict, preferences: dict, jobs: list) -> list:
-    work_mode = preferences.get("work_mode", "Any")
-    employment_type = preferences.get("employment_type", "")
-    experience_level = preferences.get("experience_level", "Any")
-    salary_min = preferences.get("salary_min") or 0
-    salary_max = preferences.get("salary_max") or float("inf")
+    # Filter only by country — user wants all jobs from selected country
+    country = preferences.get("country", "Any")
 
-    candidate_skills = set(s.lower() for s in candidate_profile.get("skills", []) + candidate_profile.get("technologies", []))
-    desired_titles = [t.lower() for t in preferences.get("desired_titles", [])]
+    if country and country != "Any":
+        filtered = [j for j in jobs if j.get("country", "").lower() == country.lower()]
+    else:
+        filtered = list(jobs)
 
+    # Score by keyword overlap so best matches appear first
+    candidate_skills = set(
+        s.lower() for s in candidate_profile.get("skills", []) + candidate_profile.get("technologies", [])
+    )
     scored = []
-    for job in jobs:
-        # Work mode filter
-        if work_mode != "Any" and job.get("work_mode", "").lower() != work_mode.lower():
-            continue
-
-        # Employment type filter
-        if employment_type and employment_type != "Any":
-            if job.get("employment_type", "").lower() != employment_type.lower():
-                continue
-
-        # Experience level filter
-        if experience_level != "Any":
-            if job.get("experience_level", "").lower() != experience_level.lower():
-                continue
-
-        # Salary filter
-        job_min = job.get("salary_min") or 0
-        job_max = job.get("salary_max") or float("inf")
-        if salary_max and job_min and job_min > salary_max:
-            continue
-        if salary_min and job_max and job_max < salary_min:
-            continue
-
-        # Keyword overlap score
+    for job in filtered:
         job_skills = set(s.lower() for s in job.get("skills", []) + job.get("requirements", []))
         overlap = len(candidate_skills & job_skills)
-
-        # Title match bonus
-        title_bonus = 0
-        job_title_lower = job.get("title", "").lower()
-        for dt in desired_titles:
-            if dt in job_title_lower or job_title_lower in dt:
-                title_bonus = 20
-                break
-
-        raw_score = overlap * 5 + title_bonus
-        scored.append((raw_score, job))
+        scored.append((overlap, job))
 
     scored.sort(key=lambda x: x[0], reverse=True)
-    return [j for _, j in scored[:50]]
+    return [j for _, j in scored]
 
 
 def _mock_match_jobs(candidate_profile: dict, preferences: dict, jobs: list) -> list:
@@ -189,7 +159,7 @@ def _mock_match_jobs(candidate_profile: dict, preferences: dict, jobs: list) -> 
         results.append(job_copy)
 
     results.sort(key=lambda x: x["match_score"], reverse=True)
-    return results[:30]
+    return results
 
 
 def match_jobs(candidate_profile: dict, preferences: dict, jobs: list) -> list:

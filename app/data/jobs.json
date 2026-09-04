@@ -20,8 +20,23 @@
       "Experience deploying models to production (Docker, AWS, or GCP)",
       "Strong communication skills for remote collaboration"
     ],
-    "skills": ["Python", "OpenAI API", "LangChain", "FastAPI", "Docker", "AWS", "Vector Databases", "REST APIs"],
-    "benefits": ["Fully remote", "Competitive salary + equity", "Health, dental, vision insurance", "Annual learning budget $2000", "Flexible PTO"],
+    "skills": [
+      "Python",
+      "OpenAI API",
+      "LangChain",
+      "FastAPI",
+      "Docker",
+      "AWS",
+      "Vector Databases",
+      "REST APIs"
+    ],
+    "benefits": [
+      "Fully remote",
+      "Competitive salary + equity",
+      "Health, dental, vision insurance",
+      "Annual learning budget $2000",
+      "Flexible PTO"
+    ],
     "posted_date": "2026-08-20",
     "company_description": "Nova Labs is a Series B AI startup building intelligent automation tools for modern enterprises. Founded in 2022, we have 80+ employees across 15 countries.",
     "industry": "Technology"
@@ -38,7 +53,7 @@
     "salary_min": 55000,
     "salary_max": 80000,
     "currency": "GBP",
-    "description": "Velocity Labs is a fast-growing fintech startup looking for a Full Stack Developer to help build and scale our consumer-facing web platform. You will work across the entire stack — from crafting pixel-perfect React frontends to designing robust Python APIs. We value clean code, thoughtful architecture, and a product-first mindset. Our engineering team is fully remote across Europe and Asia.",
+    "description": "Velocity Labs is a fast-growing fintech startup looking for a Full Stack Developer to help build and scale our consumer-facing web platform. You will work across the entire stack \u00e2\u20ac\u201d from crafting pixel-perfect React frontends to designing robust Python APIs. We value clean code, thoughtful architecture, and a product-first mindset. Our engineering team is fully remote across Europe and Asia.",
     "requirements": [
       "3+ years of full-stack development experience",
       "Proficiency in React or Next.js and TypeScript",
@@ -47,8 +62,23 @@
       "Understanding of REST API design principles",
       "Comfortable working in an agile, fast-paced environment"
     ],
-    "skills": ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Next.js", "Git", "Docker"],
-    "benefits": ["Remote-first culture", "Private health insurance", "25 days holiday", "Equipment budget", "Monthly team socials (virtual)"],
+    "skills": [
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Next.js",
+      "Git",
+      "Docker"
+    ],
+    "benefits": [
+      "Remote-first culture",
+      "Private health insurance",
+      "25 days holiday",
+      "Equipment budget",
+      "Monthly team socials (virtual)"
+    ],
     "posted_date": "2026-08-18",
     "company_description": "Velocity Labs is a UK-based fintech startup making personal finance smarter through AI-driven insights and automation. We are backed by top European VCs.",
     "industry": "Fintech"
@@ -74,8 +104,24 @@
       "Familiarity with Kubernetes and Docker",
       "Experience mentoring junior engineers"
     ],
-    "skills": ["Python", "Go", "Kubernetes", "Docker", "PostgreSQL", "Redis", "GCP", "Microservices", "FastAPI"],
-    "benefits": ["Hybrid work (2 days office)", "30 vacation days", "BVG transport card", "Learning budget €1500/year", "Stock options"],
+    "skills": [
+      "Python",
+      "Go",
+      "Kubernetes",
+      "Docker",
+      "PostgreSQL",
+      "Redis",
+      "GCP",
+      "Microservices",
+      "FastAPI"
+    ],
+    "benefits": [
+      "Hybrid work (2 days office)",
+      "30 vacation days",
+      "BVG transport card",
+      "Learning budget \u00e2\u201a\u00ac1500/year",
+      "Stock options"
+    ],
     "posted_date": "2026-08-15",
     "company_description": "CoreStack is a Berlin-based enterprise software company building cloud-native data infrastructure for global enterprises. We are a team of 200+ engineers from 30 countries.",
     "industry": "Technology"
@@ -101,8 +147,25 @@
       "Ability to design and evaluate agentic workflows",
       "Interest in AI safety and reliable AI systems"
     ],
-    "skills": ["Python", "OpenAI SDK", "LangChain", "CrewAI", "MCP Protocol", "Prompt Engineering", "FastAPI", "n8n", "Vector DBs"],
-    "benefits": ["100% remote", "$95K-$140K salary", "Equity package", "Unlimited PTO", "$3000 home office stipend", "Full health benefits"],
+    "skills": [
+      "Python",
+      "OpenAI SDK",
+      "LangChain",
+      "CrewAI",
+      "MCP Protocol",
+      "Prompt Engineering",
+      "FastAPI",
+      "n8n",
+      "Vector DBs"
+    ],
+    "benefits": [
+      "100% remote",
+      "$95K-$140K salary",
+      "Equity package",
+      "Unlimited PTO",
+      "$3000 home office stipend",
+      "Full health benefits"
+    ],
     "posted_date": "2026-08-22",
     "company_description": "AgentForge builds the developer platform for next-generation AI agents. Our tools are used by thousands of developers to build and deploy autonomous AI workflows at scale.",
     "industry": "Artificial Intelligence"
@@ -128,8 +191,23 @@
       "Strong problem-solving skills and willingness to learn",
       "Good written communication for async collaboration"
     ],
-    "skills": ["Python", "SQL", "Pandas", "NumPy", "Git", "Docker", "REST APIs", "PostgreSQL"],
-    "benefits": ["Fully remote (Canada)", "Competitive salary", "Group health benefits", "RRSP matching", "Professional development budget"],
+    "skills": [
+      "Python",
+      "SQL",
+      "Pandas",
+      "NumPy",
+      "Git",
+      "Docker",
+      "REST APIs",
+      "PostgreSQL"
+    ],
+    "benefits": [
+      "Fully remote (Canada)",
+      "Competitive salary",
+      "Group health benefits",
+      "RRSP matching",
+      "Professional development budget"
+    ],
     "posted_date": "2026-08-25",
     "company_description": "DataBridge is a Canadian data intelligence company helping mid-market businesses make better decisions through automated analytics and reporting. Bootstrapped and profitable.",
     "industry": "Data Analytics"
@@ -155,8 +233,24 @@
       "Understanding of web performance optimization",
       "Experience with RESTful APIs and state management"
     ],
-    "skills": ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML", "CSS", "Git", "REST APIs"],
-    "benefits": ["Remote work", "Competitive PKR salary", "Annual bonus", "Learning & development support", "Equipment provided"],
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Git",
+      "REST APIs"
+    ],
+    "benefits": [
+      "Remote work",
+      "Competitive PKR salary",
+      "Annual bonus",
+      "Learning & development support",
+      "Equipment provided"
+    ],
     "posted_date": "2026-08-28",
     "company_description": "Prism Digital is a Karachi-based digital agency delivering world-class web products for global clients. We have a team of 50+ designers and engineers.",
     "industry": "Digital Agency"
@@ -182,8 +276,24 @@
       "Experience with cloud ML platforms (AWS SageMaker, GCP Vertex AI)",
       "Bonus: experience in healthcare or regulated industries"
     ],
-    "skills": ["Python", "PyTorch", "TensorFlow", "MLflow", "AWS SageMaker", "Docker", "Kubernetes", "SQL", "scikit-learn"],
-    "benefits": ["Fully remote (Australia)", "Above-market salary", "Private health insurance", "Annual AI conference budget", "Equity options"],
+    "skills": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "MLflow",
+      "AWS SageMaker",
+      "Docker",
+      "Kubernetes",
+      "SQL",
+      "scikit-learn"
+    ],
+    "benefits": [
+      "Fully remote (Australia)",
+      "Above-market salary",
+      "Private health insurance",
+      "Annual AI conference budget",
+      "Equity options"
+    ],
     "posted_date": "2026-08-17",
     "company_description": "Cognify Labs is an Australian AI company applying machine learning to improve early disease detection and clinical decision support. We partner with hospitals across the Asia-Pacific region.",
     "industry": "Healthcare Technology"
@@ -209,8 +319,25 @@
       "Solid AWS or GCP skills with relevant certifications preferred",
       "Experience with monitoring and observability tools (Prometheus, Grafana, Datadog)"
     ],
-    "skills": ["Kubernetes", "Docker", "Terraform", "AWS", "GCP", "GitHub Actions", "Prometheus", "Grafana", "Linux", "Python"],
-    "benefits": ["100% remote", "Competitive salary + annual bonus", "Full health, dental, vision", "401(k) with 4% match", "Home office stipend $1500"],
+    "skills": [
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "AWS",
+      "GCP",
+      "GitHub Actions",
+      "Prometheus",
+      "Grafana",
+      "Linux",
+      "Python"
+    ],
+    "benefits": [
+      "100% remote",
+      "Competitive salary + annual bonus",
+      "Full health, dental, vision",
+      "401(k) with 4% match",
+      "Home office stipend $1500"
+    ],
     "posted_date": "2026-08-21",
     "company_description": "CloudFirst is a managed cloud services company helping growth-stage startups scale their infrastructure reliably. We are a team of 40 engineers serving 120+ clients worldwide.",
     "industry": "Cloud Infrastructure"
@@ -236,8 +363,23 @@
       "Strong willingness to learn and take feedback",
       "Good problem-solving and analytical skills"
     ],
-    "skills": ["Python", "JavaScript", "PHP", "MySQL", "Git", "REST APIs", "HTML", "CSS"],
-    "benefits": ["On-site Lahore office", "Competitive PKR salary", "Annual increment", "Training and mentorship", "Provident fund"],
+    "skills": [
+      "Python",
+      "JavaScript",
+      "PHP",
+      "MySQL",
+      "Git",
+      "REST APIs",
+      "HTML",
+      "CSS"
+    ],
+    "benefits": [
+      "On-site Lahore office",
+      "Competitive PKR salary",
+      "Annual increment",
+      "Training and mentorship",
+      "Provident fund"
+    ],
     "posted_date": "2026-08-30",
     "company_description": "Nexus Systems is a Lahore-based software company delivering custom enterprise solutions for 50+ clients across Pakistan, UAE, and Europe. Team of 120 engineers.",
     "industry": "Software Development"
@@ -263,10 +405,1542 @@
       "Understanding of embedding models and vector search",
       "Experience with prompt engineering and LLM evaluation methodologies"
     ],
-    "skills": ["Python", "OpenAI API", "LangChain", "RAG", "Vector Databases", "Hugging Face", "Prompt Engineering", "FastAPI", "Docker"],
-    "benefits": ["Fully remote (UK)", "Competitive GBP salary", "Private healthcare", "25 days annual leave + bank holidays", "Equity participation"],
+    "skills": [
+      "Python",
+      "OpenAI API",
+      "LangChain",
+      "RAG",
+      "Vector Databases",
+      "Hugging Face",
+      "Prompt Engineering",
+      "FastAPI",
+      "Docker"
+    ],
+    "benefits": [
+      "Fully remote (UK)",
+      "Competitive GBP salary",
+      "Private healthcare",
+      "25 days annual leave + bank holidays",
+      "Equity participation"
+    ],
     "posted_date": "2026-08-24",
     "company_description": "MindBridge AI is a London-based AI company building enterprise LLM applications that transform how organizations work with knowledge and data. Backed by Tier 1 UK VCs.",
     "industry": "Artificial Intelligence"
+  },
+  {
+    "id": "JOB-011",
+    "title": "Senior Frontend Developer",
+    "company": "TechWave Inc.",
+    "location": "San Francisco, CA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Senior Level",
+    "salary_min": 110000,
+    "salary_max": 150000,
+    "currency": "USD",
+    "description": "TechWave is looking for a Senior Frontend Developer to build beautiful, performant React applications for our SaaS platform used by 50,000+ businesses.",
+    "requirements": [
+      "5+ years React/TypeScript experience",
+      "Experience with Next.js",
+      "Strong CSS/Tailwind skills",
+      "REST API integration"
+    ],
+    "skills": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "GraphQL",
+      "Jest"
+    ],
+    "benefits": [
+      "Remote-first",
+      "Health insurance",
+      "$2000 learning budget",
+      "Unlimited PTO"
+    ],
+    "posted_date": "2026-08-25",
+    "company_description": "TechWave builds SaaS tools for SMBs.",
+    "industry": "Technology"
+  },
+  {
+    "id": "JOB-012",
+    "title": "Python Backend Engineer",
+    "company": "DataStream Corp",
+    "location": "Austin, TX",
+    "country": "United States",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 95000,
+    "salary_max": 135000,
+    "currency": "USD",
+    "description": "DataStream is hiring a Python Backend Engineer to design scalable APIs and data pipelines for our analytics platform.",
+    "requirements": [
+      "3+ years Python",
+      "FastAPI or Django experience",
+      "PostgreSQL proficiency",
+      "Docker/Kubernetes"
+    ],
+    "skills": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "Redis",
+      "AWS"
+    ],
+    "benefits": [
+      "Hybrid work",
+      "401k match",
+      "Health/dental/vision",
+      "Stock options"
+    ],
+    "posted_date": "2026-08-22",
+    "company_description": "DataStream provides real-time analytics solutions.",
+    "industry": "Data & Analytics"
+  },
+  {
+    "id": "JOB-013",
+    "title": "Full Stack Developer",
+    "company": "CloudNova",
+    "location": "New York, NY",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 140000,
+    "currency": "USD",
+    "description": "CloudNova seeks a Full Stack Developer comfortable across the entire stack \u2014 from React frontends to Python backends and cloud infrastructure.",
+    "requirements": [
+      "React + Python experience",
+      "3+ years full-stack",
+      "CI/CD familiarity",
+      "REST/GraphQL APIs"
+    ],
+    "skills": [
+      "React",
+      "Python",
+      "Node.js",
+      "PostgreSQL",
+      "AWS",
+      "Docker",
+      "TypeScript"
+    ],
+    "benefits": [
+      "100% remote",
+      "Equity",
+      "Health insurance",
+      "Home office stipend"
+    ],
+    "posted_date": "2026-08-28",
+    "company_description": "CloudNova is a cloud-native startup.",
+    "industry": "Technology"
+  },
+  {
+    "id": "JOB-014",
+    "title": "Machine Learning Engineer",
+    "company": "Synapse AI",
+    "location": "Seattle, WA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Senior Level",
+    "salary_min": 130000,
+    "salary_max": 180000,
+    "currency": "USD",
+    "description": "Synapse AI is building the future of conversational AI. Join our ML team to train, fine-tune, and deploy large language models.",
+    "requirements": [
+      "ML/deep learning expertise",
+      "Python + PyTorch/TensorFlow",
+      "LLM fine-tuning experience",
+      "MLOps knowledge"
+    ],
+    "skills": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "LLM",
+      "MLOps",
+      "Kubernetes",
+      "OpenAI API"
+    ],
+    "benefits": [
+      "Remote",
+      "Top-tier salary",
+      "H1B sponsorship",
+      "Learning budget"
+    ],
+    "posted_date": "2026-08-18",
+    "company_description": "Synapse AI specializes in conversational AI products.",
+    "industry": "Artificial Intelligence"
+  },
+  {
+    "id": "JOB-015",
+    "title": "DevOps / Cloud Engineer",
+    "company": "Orbify",
+    "location": "Chicago, IL",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 105000,
+    "salary_max": 145000,
+    "currency": "USD",
+    "description": "Orbify needs a DevOps engineer to manage our AWS infrastructure, CI/CD pipelines, and Kubernetes clusters at scale.",
+    "requirements": [
+      "AWS expertise",
+      "Kubernetes/Helm",
+      "Terraform IaC",
+      "CI/CD pipelines"
+    ],
+    "skills": [
+      "AWS",
+      "Kubernetes",
+      "Terraform",
+      "Docker",
+      "Jenkins",
+      "Linux",
+      "Python"
+    ],
+    "benefits": [
+      "Fully remote",
+      "Comprehensive benefits",
+      "Flexible hours",
+      "Equity"
+    ],
+    "posted_date": "2026-08-20",
+    "company_description": "Orbify powers cloud infrastructure for enterprises.",
+    "industry": "Cloud Computing"
+  },
+  {
+    "id": "JOB-016",
+    "title": "AI Product Engineer",
+    "company": "Mindforge",
+    "location": "Los Angeles, CA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 140000,
+    "currency": "USD",
+    "description": "Mindforge is building AI-powered education tools. We need an AI Product Engineer to design and ship intelligent features end-to-end.",
+    "requirements": [
+      "Python + OpenAI API",
+      "React frontend skills",
+      "Product thinking",
+      "RAG pipelines"
+    ],
+    "skills": [
+      "Python",
+      "OpenAI API",
+      "React",
+      "LangChain",
+      "Vector Databases",
+      "FastAPI"
+    ],
+    "benefits": [
+      "Remote-first",
+      "Mission-driven culture",
+      "Equity",
+      "Health benefits"
+    ],
+    "posted_date": "2026-08-27",
+    "company_description": "Mindforge builds AI tutoring platforms.",
+    "industry": "EdTech"
+  },
+  {
+    "id": "JOB-017",
+    "title": "Backend Software Engineer",
+    "company": "FinEdge",
+    "location": "Boston, MA",
+    "country": "United States",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 135000,
+    "currency": "USD",
+    "description": "FinEdge is a fintech company building next-gen payment infrastructure. Join us as a Backend Engineer to build secure, high-performance APIs.",
+    "requirements": [
+      "Python or Java backend",
+      "PostgreSQL",
+      "REST APIs",
+      "Security best practices"
+    ],
+    "skills": [
+      "Python",
+      "Java",
+      "PostgreSQL",
+      "REST APIs",
+      "Docker",
+      "AWS",
+      "Microservices"
+    ],
+    "benefits": [
+      "Hybrid work",
+      "401k",
+      "Health insurance",
+      "Annual bonus"
+    ],
+    "posted_date": "2026-08-15",
+    "company_description": "FinEdge processes $2B+ in payments annually.",
+    "industry": "FinTech"
+  },
+  {
+    "id": "JOB-018",
+    "title": "React Native Developer",
+    "company": "AppCraft Studios",
+    "location": "Miami, FL",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 90000,
+    "salary_max": 125000,
+    "currency": "USD",
+    "description": "AppCraft Studios builds mobile apps for top brands. We need a React Native developer to lead our mobile engineering efforts.",
+    "requirements": [
+      "React Native expertise",
+      "iOS + Android deployment",
+      "REST API integration",
+      "TypeScript"
+    ],
+    "skills": [
+      "React Native",
+      "TypeScript",
+      "JavaScript",
+      "Redux",
+      "REST APIs",
+      "Git"
+    ],
+    "benefits": [
+      "Remote",
+      "Health insurance",
+      "Project bonuses",
+      "Flexible hours"
+    ],
+    "posted_date": "2026-08-26",
+    "company_description": "AppCraft builds award-winning mobile apps.",
+    "industry": "Mobile Development"
+  },
+  {
+    "id": "JOB-019",
+    "title": "Data Engineer",
+    "company": "Quanta Analytics",
+    "location": "Denver, CO",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 95000,
+    "salary_max": 130000,
+    "currency": "USD",
+    "description": "Quanta Analytics needs a Data Engineer to build robust ETL pipelines and data warehouse solutions for enterprise clients.",
+    "requirements": [
+      "SQL + Python",
+      "Spark or dbt",
+      "AWS or GCP",
+      "Data modeling"
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "Apache Spark",
+      "dbt",
+      "AWS",
+      "Airflow",
+      "PostgreSQL"
+    ],
+    "benefits": [
+      "Remote",
+      "Competitive salary",
+      "Health benefits",
+      "Stock options"
+    ],
+    "posted_date": "2026-08-21",
+    "company_description": "Quanta provides analytics solutions for Fortune 500 companies.",
+    "industry": "Data Engineering"
+  },
+  {
+    "id": "JOB-020",
+    "title": "Software Engineer - Generative AI",
+    "company": "LumineAI",
+    "location": "San Jose, CA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 115000,
+    "salary_max": 160000,
+    "currency": "USD",
+    "description": "LumineAI is at the frontier of generative AI. We need an engineer to build AI-powered tools using LLMs, RAG, and multi-agent architectures.",
+    "requirements": [
+      "LLM/GenAI experience",
+      "Python",
+      "LangChain or CrewAI",
+      "Vector DBs"
+    ],
+    "skills": [
+      "Python",
+      "LangChain",
+      "OpenAI API",
+      "Vector Databases",
+      "FastAPI",
+      "Docker",
+      "Agents"
+    ],
+    "benefits": [
+      "Remote",
+      "Top equity",
+      "Unlimited PTO",
+      "$3000 learning budget"
+    ],
+    "posted_date": "2026-09-01",
+    "company_description": "LumineAI builds generative AI applications.",
+    "industry": "Artificial Intelligence"
+  },
+  {
+    "id": "JOB-021",
+    "title": "Node.js Backend Developer",
+    "company": "Streamline SaaS",
+    "location": "Portland, OR",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 90000,
+    "salary_max": 120000,
+    "currency": "USD",
+    "description": "Streamline SaaS is hiring a Node.js developer to build scalable backend services for our project management platform.",
+    "requirements": [
+      "Node.js + Express",
+      "MongoDB or PostgreSQL",
+      "REST APIs",
+      "JWT auth"
+    ],
+    "skills": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "PostgreSQL",
+      "REST APIs",
+      "Docker",
+      "JavaScript"
+    ],
+    "benefits": [
+      "Fully remote",
+      "Health insurance",
+      "Flexible hours",
+      "401k"
+    ],
+    "posted_date": "2026-08-29",
+    "company_description": "Streamline SaaS serves 20,000+ project teams.",
+    "industry": "SaaS"
+  },
+  {
+    "id": "JOB-022",
+    "title": "Junior Web Developer",
+    "company": "BrightPixel Agency",
+    "location": "Remote, USA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Entry Level",
+    "salary_min": 55000,
+    "salary_max": 75000,
+    "currency": "USD",
+    "description": "BrightPixel is a digital agency looking for a Junior Web Developer eager to grow. You will build websites and web apps for diverse clients.",
+    "requirements": [
+      "HTML/CSS/JavaScript",
+      "Basic React knowledge",
+      "Git",
+      "Good communication"
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "Tailwind CSS"
+    ],
+    "benefits": [
+      "Remote",
+      "Mentorship",
+      "Health insurance",
+      "Growth opportunities"
+    ],
+    "posted_date": "2026-09-02",
+    "company_description": "BrightPixel is a full-service digital agency.",
+    "industry": "Digital Agency"
+  },
+  {
+    "id": "JOB-023",
+    "title": "AI Automation Engineer",
+    "company": "AutoPilot Systems",
+    "location": "Atlanta, GA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 140000,
+    "currency": "USD",
+    "description": "AutoPilot Systems builds AI-driven business automation. We need an engineer to design and deploy intelligent workflows using n8n, LLMs, and custom agents.",
+    "requirements": [
+      "n8n or Zapier expertise",
+      "Python scripting",
+      "LLM integration",
+      "REST API experience"
+    ],
+    "skills": [
+      "Python",
+      "n8n",
+      "OpenAI API",
+      "REST APIs",
+      "LangChain",
+      "Docker",
+      "JavaScript"
+    ],
+    "benefits": [
+      "Fully remote",
+      "Performance bonus",
+      "Health benefits",
+      "Equity"
+    ],
+    "posted_date": "2026-08-30",
+    "company_description": "AutoPilot automates enterprise workflows with AI.",
+    "industry": "Automation"
+  },
+  {
+    "id": "JOB-024",
+    "title": "TypeScript / Next.js Developer",
+    "company": "Pixel Republic",
+    "location": "Remote, USA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 95000,
+    "salary_max": 130000,
+    "currency": "USD",
+    "description": "Pixel Republic builds consumer web products. We need a Next.js developer to lead frontend development on our flagship app.",
+    "requirements": [
+      "Next.js + TypeScript",
+      "Tailwind CSS",
+      "REST/GraphQL",
+      "Vercel deployment"
+    ],
+    "skills": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "GraphQL",
+      "Vercel",
+      "PostgreSQL"
+    ],
+    "benefits": [
+      "Remote-first",
+      "Health insurance",
+      "Annual retreat",
+      "Stock options"
+    ],
+    "posted_date": "2026-08-24",
+    "company_description": "Pixel Republic creates delightful consumer web experiences.",
+    "industry": "Consumer Tech"
+  },
+  {
+    "id": "JOB-025",
+    "title": "Senior AI/ML Engineer",
+    "company": "Cognify",
+    "location": "San Francisco, CA",
+    "country": "United States",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Senior Level",
+    "salary_min": 140000,
+    "salary_max": 200000,
+    "currency": "USD",
+    "description": "Cognify is hiring a Senior AI/ML Engineer to design and scale our AI recommendation engine serving 10M+ users.",
+    "requirements": [
+      "ML engineering at scale",
+      "Python + PyTorch",
+      "A/B testing",
+      "Production ML systems"
+    ],
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Scikit-learn",
+      "Spark",
+      "Kubernetes",
+      "MLflow",
+      "AWS"
+    ],
+    "benefits": [
+      "Top compensation",
+      "Remote",
+      "Generous equity",
+      "Premium benefits"
+    ],
+    "posted_date": "2026-08-17",
+    "company_description": "Cognify powers intelligent personalization at scale.",
+    "industry": "Artificial Intelligence"
+  },
+  {
+    "id": "JOB-026",
+    "title": "Full Stack Developer",
+    "company": "Systems Limited",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 150000,
+    "salary_max": 250000,
+    "currency": "PKR",
+    "description": "Systems Limited, Pakistan's largest IT company, is hiring a Full Stack Developer to build enterprise web solutions for global clients.",
+    "requirements": [
+      "React + Node.js or Python",
+      "3+ years experience",
+      "REST APIs",
+      "SQL databases"
+    ],
+    "skills": [
+      "React",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "REST APIs",
+      "Docker",
+      "Git"
+    ],
+    "benefits": [
+      "EOBI",
+      "Health insurance",
+      "Annual bonus",
+      "Training budget"
+    ],
+    "posted_date": "2026-08-25",
+    "company_description": "Systems Limited is Pakistan's premier IT services company.",
+    "industry": "IT Services"
+  },
+  {
+    "id": "JOB-027",
+    "title": "Python Django Developer",
+    "company": "Arbisoft",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 120000,
+    "salary_max": 200000,
+    "currency": "PKR",
+    "description": "Arbisoft is seeking a Python Django developer to build robust web applications for US-based startups and enterprises.",
+    "requirements": [
+      "Django/DRF proficiency",
+      "PostgreSQL",
+      "REST APIs",
+      "Git workflow"
+    ],
+    "skills": [
+      "Python",
+      "Django",
+      "DRF",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Git"
+    ],
+    "benefits": [
+      "Hybrid work",
+      "Health coverage",
+      "Annual leave",
+      "Performance bonus"
+    ],
+    "posted_date": "2026-08-22",
+    "company_description": "Arbisoft builds software products for global clients.",
+    "industry": "Software Development"
+  },
+  {
+    "id": "JOB-028",
+    "title": "React.js Frontend Developer",
+    "company": "10Pearls",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 180000,
+    "currency": "PKR",
+    "description": "10Pearls is looking for a React.js developer to join our front-end team and build responsive, high-performance web interfaces.",
+    "requirements": [
+      "React.js + Hooks",
+      "JavaScript ES6+",
+      "REST API integration",
+      "Tailwind or Material UI"
+    ],
+    "skills": [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Git"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Lunch facility",
+      "Annual bonus",
+      "Learning & development"
+    ],
+    "posted_date": "2026-08-20",
+    "company_description": "10Pearls is a global digital innovation company.",
+    "industry": "Software Development"
+  },
+  {
+    "id": "JOB-029",
+    "title": "AI Engineer",
+    "company": "Contour Software",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 180000,
+    "salary_max": 280000,
+    "currency": "PKR",
+    "description": "Contour Software needs an AI Engineer to integrate machine learning models and OpenAI APIs into enterprise software products.",
+    "requirements": [
+      "Python + ML/AI experience",
+      "OpenAI or HuggingFace",
+      "REST APIs",
+      "SQL"
+    ],
+    "skills": [
+      "Python",
+      "OpenAI API",
+      "Machine Learning",
+      "FastAPI",
+      "SQL",
+      "Docker"
+    ],
+    "benefits": [
+      "Health insurance",
+      "EOBI",
+      "Annual bonus",
+      "Market competitive salary"
+    ],
+    "posted_date": "2026-08-27",
+    "company_description": "Contour Software builds accounting and ERP solutions.",
+    "industry": "Enterprise Software"
+  },
+  {
+    "id": "JOB-030",
+    "title": "Senior Software Engineer",
+    "company": "Netsol Technologies",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Senior Level",
+    "salary_min": 200000,
+    "salary_max": 350000,
+    "currency": "PKR",
+    "description": "NetSol Technologies is hiring a Senior Software Engineer to work on our globally deployed asset finance software used in 100+ countries.",
+    "requirements": [
+      "5+ years software engineering",
+      "Java or .NET",
+      "SQL Server",
+      "Agile/Scrum"
+    ],
+    "skills": [
+      "Java",
+      "Python",
+      "SQL Server",
+      "REST APIs",
+      "Microservices",
+      "Docker",
+      "Git"
+    ],
+    "benefits": [
+      "Provident fund",
+      "Medical insurance",
+      "Annual leave",
+      "Stock ownership"
+    ],
+    "posted_date": "2026-08-18",
+    "company_description": "NetSol is a global IT services company listed on NASDAQ.",
+    "industry": "FinTech"
+  },
+  {
+    "id": "JOB-031",
+    "title": "Node.js Developer",
+    "company": "Techloyce",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 175000,
+    "currency": "PKR",
+    "description": "Techloyce is seeking a Node.js developer to build backend services for our CRM and project management platforms.",
+    "requirements": [
+      "Node.js + Express",
+      "MongoDB or MySQL",
+      "REST APIs",
+      "JWT authentication"
+    ],
+    "skills": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JavaScript",
+      "REST APIs",
+      "Git",
+      "Docker"
+    ],
+    "benefits": [
+      "Remote work",
+      "Health insurance",
+      "Performance bonus",
+      "Flexible hours"
+    ],
+    "posted_date": "2026-08-28",
+    "company_description": "Techloyce provides CRM and business software solutions.",
+    "industry": "SaaS"
+  },
+  {
+    "id": "JOB-032",
+    "title": "Machine Learning Engineer",
+    "company": "Afiniti",
+    "location": "Islamabad",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Senior Level",
+    "salary_min": 250000,
+    "salary_max": 400000,
+    "currency": "PKR",
+    "description": "Afiniti is a global AI company using behavioral data science to optimize human interactions. Join our ML team in Islamabad.",
+    "requirements": [
+      "ML/data science expertise",
+      "Python",
+      "Statistical modeling",
+      "Production ML systems"
+    ],
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "TensorFlow",
+      "PyTorch",
+      "Statistics",
+      "SQL",
+      "AWS"
+    ],
+    "benefits": [
+      "Top market salary",
+      "Health & life insurance",
+      "Annual bonus",
+      "International exposure"
+    ],
+    "posted_date": "2026-08-15",
+    "company_description": "Afiniti is a global AI behavioral analytics company.",
+    "industry": "Artificial Intelligence"
+  },
+  {
+    "id": "JOB-033",
+    "title": "WordPress / PHP Developer",
+    "company": "Creative Chaos",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 80000,
+    "salary_max": 140000,
+    "currency": "PKR",
+    "description": "Creative Chaos is a digital agency seeking a PHP/WordPress developer to build and maintain client websites.",
+    "requirements": [
+      "PHP + WordPress",
+      "MySQL",
+      "HTML/CSS/JavaScript",
+      "WooCommerce"
+    ],
+    "skills": [
+      "PHP",
+      "WordPress",
+      "MySQL",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "WooCommerce"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Annual bonus",
+      "Training",
+      "Team outings"
+    ],
+    "posted_date": "2026-08-26",
+    "company_description": "Creative Chaos is an award-winning digital agency.",
+    "industry": "Digital Agency"
+  },
+  {
+    "id": "JOB-034",
+    "title": "DevOps Engineer",
+    "company": "Programmers Force",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 150000,
+    "salary_max": 250000,
+    "currency": "PKR",
+    "description": "Programmers Force needs a DevOps Engineer to manage cloud infrastructure, CI/CD pipelines, and container orchestration.",
+    "requirements": [
+      "AWS or GCP",
+      "Docker + Kubernetes",
+      "CI/CD tools",
+      "Linux administration"
+    ],
+    "skills": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Terraform",
+      "Linux",
+      "Python"
+    ],
+    "benefits": [
+      "Hybrid work",
+      "Health coverage",
+      "Provident fund",
+      "Performance bonus"
+    ],
+    "posted_date": "2026-08-21",
+    "company_description": "Programmers Force delivers software to global clients.",
+    "industry": "IT Services"
+  },
+  {
+    "id": "JOB-035",
+    "title": "Junior Python Developer",
+    "company": "Invozone",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Entry Level",
+    "salary_min": 60000,
+    "salary_max": 100000,
+    "currency": "PKR",
+    "description": "Invozone is looking for a Junior Python Developer to support our backend engineering team building APIs and automation scripts.",
+    "requirements": [
+      "Python basics",
+      "Django or Flask",
+      "SQL fundamentals",
+      "Willingness to learn"
+    ],
+    "skills": [
+      "Python",
+      "Django",
+      "SQL",
+      "REST APIs",
+      "Git",
+      "HTML",
+      "CSS"
+    ],
+    "benefits": [
+      "Mentorship",
+      "Health insurance",
+      "Training budget",
+      "Growth path"
+    ],
+    "posted_date": "2026-09-02",
+    "company_description": "Invozone delivers custom software for global startups.",
+    "industry": "Software Development"
+  },
+  {
+    "id": "JOB-036",
+    "title": "Full Stack Web Developer (React + FastAPI)",
+    "company": "VentureDive",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 130000,
+    "salary_max": 220000,
+    "currency": "PKR",
+    "description": "VentureDive builds digital products for startups and enterprises. We need a full-stack developer to own features from frontend to backend.",
+    "requirements": [
+      "React frontend",
+      "FastAPI or Django",
+      "PostgreSQL",
+      "Docker deployment"
+    ],
+    "skills": [
+      "React",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "TypeScript",
+      "REST APIs"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Annual bonus",
+      "Company trips",
+      "Training allowance"
+    ],
+    "posted_date": "2026-08-24",
+    "company_description": "VentureDive creates innovative digital products.",
+    "industry": "Technology"
+  },
+  {
+    "id": "JOB-037",
+    "title": "AI Chatbot Developer",
+    "company": "TechAbout",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 120000,
+    "salary_max": 200000,
+    "currency": "PKR",
+    "description": "TechAbout is building AI chatbot solutions for local and international businesses. Join us to develop intelligent conversational agents.",
+    "requirements": [
+      "Python + NLP",
+      "OpenAI or Dialogflow",
+      "REST APIs",
+      "WhatsApp/Telegram bot experience"
+    ],
+    "skills": [
+      "Python",
+      "OpenAI API",
+      "NLP",
+      "LangChain",
+      "REST APIs",
+      "FastAPI",
+      "JavaScript"
+    ],
+    "benefits": [
+      "Remote",
+      "Flexible hours",
+      "Health insurance",
+      "Performance bonus"
+    ],
+    "posted_date": "2026-08-29",
+    "company_description": "TechAbout delivers AI-powered business solutions.",
+    "industry": "AI / Automation"
+  },
+  {
+    "id": "JOB-038",
+    "title": "Mobile App Developer (Flutter)",
+    "company": "Softech Worldwide",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 100000,
+    "salary_max": 175000,
+    "currency": "PKR",
+    "description": "Softech Worldwide is hiring a Flutter developer to build cross-platform mobile apps for our fintech and e-commerce clients.",
+    "requirements": [
+      "Flutter + Dart",
+      "iOS & Android deployment",
+      "REST API integration",
+      "Firebase"
+    ],
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "REST APIs",
+      "Git",
+      "JavaScript",
+      "Mobile Development"
+    ],
+    "benefits": [
+      "Health insurance",
+      "EOBI",
+      "Annual bonus",
+      "Training programs"
+    ],
+    "posted_date": "2026-08-23",
+    "company_description": "Softech Worldwide provides IT solutions across multiple industries.",
+    "industry": "Mobile Development"
+  },
+  {
+    "id": "JOB-039",
+    "title": "Data Analyst",
+    "company": "Telenor Pakistan",
+    "location": "Islamabad",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 120000,
+    "salary_max": 200000,
+    "currency": "PKR",
+    "description": "Telenor Pakistan is looking for a Data Analyst to generate insights from customer data to drive business decisions.",
+    "requirements": [
+      "SQL proficiency",
+      "Python or R",
+      "Power BI or Tableau",
+      "Statistical analysis"
+    ],
+    "skills": [
+      "SQL",
+      "Python",
+      "Power BI",
+      "Excel",
+      "Statistics",
+      "Data Visualization",
+      "Tableau"
+    ],
+    "benefits": [
+      "Hybrid work",
+      "Medical insurance",
+      "Provident fund",
+      "Annual leave"
+    ],
+    "posted_date": "2026-08-19",
+    "company_description": "Telenor Pakistan is a leading telecom operator.",
+    "industry": "Telecommunications"
+  },
+  {
+    "id": "JOB-040",
+    "title": "React Native Developer",
+    "company": "Empg (Zameen.com)",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 130000,
+    "salary_max": 220000,
+    "currency": "PKR",
+    "description": "Zameen.com, Pakistan's #1 property portal, is hiring a React Native developer to enhance our widely-used mobile apps.",
+    "requirements": [
+      "React Native expertise",
+      "iOS + Android",
+      "Redux",
+      "REST APIs"
+    ],
+    "skills": [
+      "React Native",
+      "JavaScript",
+      "TypeScript",
+      "Redux",
+      "REST APIs",
+      "Git",
+      "Firebase"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Lunch facility",
+      "Annual bonus",
+      "Gym membership"
+    ],
+    "posted_date": "2026-08-16",
+    "company_description": "Zameen.com is Pakistan's largest property marketplace.",
+    "industry": "PropTech"
+  },
+  {
+    "id": "JOB-041",
+    "title": "Software Engineer (Backend)",
+    "company": "Careem",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 200000,
+    "salary_max": 350000,
+    "currency": "PKR",
+    "description": "Careem is building the everything app for the Greater Middle East and Pakistan. Join our backend engineering team to build at scale.",
+    "requirements": [
+      "Microservices architecture",
+      "Python or Go",
+      "Kafka/RabbitMQ",
+      "AWS/GCP"
+    ],
+    "skills": [
+      "Python",
+      "Go",
+      "Microservices",
+      "Kafka",
+      "AWS",
+      "PostgreSQL",
+      "Docker",
+      "Kubernetes"
+    ],
+    "benefits": [
+      "Top market salary",
+      "Health & life insurance",
+      "Stock options",
+      "Flexible work"
+    ],
+    "posted_date": "2026-08-14",
+    "company_description": "Careem is the region's leading super app.",
+    "industry": "Super App"
+  },
+  {
+    "id": "JOB-042",
+    "title": "Frontend Engineer (Next.js)",
+    "company": "Daraz",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 150000,
+    "salary_max": 250000,
+    "currency": "PKR",
+    "description": "Daraz, South Asia's largest e-commerce platform, is hiring a Next.js Frontend Engineer to build high-traffic shopping experiences.",
+    "requirements": [
+      "Next.js + React",
+      "TypeScript",
+      "Performance optimization",
+      "A/B testing"
+    ],
+    "skills": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "GraphQL",
+      "Git"
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Health insurance",
+      "Provident fund",
+      "Shopping discounts"
+    ],
+    "posted_date": "2026-08-25",
+    "company_description": "Daraz is South Asia's premier e-commerce marketplace.",
+    "industry": "E-Commerce"
+  },
+  {
+    "id": "JOB-043",
+    "title": "Junior Web Developer",
+    "company": "Ciklum",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Entry Level",
+    "salary_min": 50000,
+    "salary_max": 90000,
+    "currency": "PKR",
+    "description": "Ciklum is hiring a junior developer with strong HTML/CSS/JavaScript skills to build responsive web pages for international clients.",
+    "requirements": [
+      "HTML5/CSS3",
+      "JavaScript basics",
+      "Git",
+      "Responsive design"
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Git",
+      "Figma",
+      "Responsive Design"
+    ],
+    "benefits": [
+      "Mentorship program",
+      "Health insurance",
+      "Training",
+      "Career growth"
+    ],
+    "posted_date": "2026-09-01",
+    "company_description": "Ciklum is a global digital solutions provider.",
+    "industry": "Digital Services"
+  },
+  {
+    "id": "JOB-044",
+    "title": "Cloud / AWS Engineer",
+    "company": "Tkxel",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 150000,
+    "salary_max": 260000,
+    "currency": "PKR",
+    "description": "Tkxel is looking for an AWS Engineer to manage cloud infrastructure for US-based product companies.",
+    "requirements": [
+      "AWS expertise",
+      "Terraform or CloudFormation",
+      "Linux",
+      "Docker + Kubernetes"
+    ],
+    "skills": [
+      "AWS",
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "Linux",
+      "Python",
+      "CI/CD"
+    ],
+    "benefits": [
+      "Hybrid",
+      "Health coverage",
+      "Annual bonus",
+      "International project exposure"
+    ],
+    "posted_date": "2026-08-22",
+    "company_description": "Tkxel builds software products for global tech companies.",
+    "industry": "Cloud Computing"
+  },
+  {
+    "id": "JOB-045",
+    "title": "Senior Full Stack Developer",
+    "company": "Confiz",
+    "location": "Lahore",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Senior Level",
+    "salary_min": 250000,
+    "salary_max": 400000,
+    "currency": "PKR",
+    "description": "Confiz seeks a Senior Full Stack Developer to lead development of a large-scale retail analytics platform for a global Fortune 500 client.",
+    "requirements": [
+      "5+ years full-stack",
+      "React + .NET or Python",
+      "SQL Server or PostgreSQL",
+      "Team leadership"
+    ],
+    "skills": [
+      "React",
+      "Python",
+      ".NET",
+      "SQL Server",
+      "PostgreSQL",
+      "Docker",
+      "Azure",
+      "TypeScript"
+    ],
+    "benefits": [
+      "Top market pay",
+      "Health & life insurance",
+      "Provident fund",
+      "Annual bonus"
+    ],
+    "posted_date": "2026-08-17",
+    "company_description": "Confiz is a technology partner for global retail enterprises.",
+    "industry": "Retail Technology"
+  },
+  {
+    "id": "JOB-046",
+    "title": "Agentic AI Developer",
+    "company": "ByteSphere",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 150000,
+    "salary_max": 250000,
+    "currency": "PKR",
+    "description": "ByteSphere is building autonomous AI agents for business automation. We want an engineer skilled in agentic frameworks to build multi-agent systems.",
+    "requirements": [
+      "LangChain or CrewAI",
+      "OpenAI API",
+      "Python",
+      "Agent orchestration"
+    ],
+    "skills": [
+      "Python",
+      "LangChain",
+      "OpenAI API",
+      "CrewAI",
+      "FastAPI",
+      "Vector Databases",
+      "Agents"
+    ],
+    "benefits": [
+      "Fully remote",
+      "Flexible hours",
+      "Market competitive salary",
+      "Equity options"
+    ],
+    "posted_date": "2026-09-01",
+    "company_description": "ByteSphere pioneers AI automation for businesses.",
+    "industry": "AI / Automation"
+  },
+  {
+    "id": "JOB-047",
+    "title": "QA Engineer",
+    "company": "Cube Creative",
+    "location": "Islamabad",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 80000,
+    "salary_max": 140000,
+    "currency": "PKR",
+    "description": "Cube Creative is looking for a QA Engineer to ensure high-quality software delivery through manual and automated testing.",
+    "requirements": [
+      "Manual testing",
+      "Selenium or Cypress",
+      "API testing",
+      "Bug reporting"
+    ],
+    "skills": [
+      "Selenium",
+      "Cypress",
+      "Python",
+      "JavaScript",
+      "Postman",
+      "SQL",
+      "JIRA"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Annual leave",
+      "Training",
+      "Team culture"
+    ],
+    "posted_date": "2026-08-28",
+    "company_description": "Cube Creative delivers quality software for diverse clients.",
+    "industry": "Software Testing"
+  },
+  {
+    "id": "JOB-048",
+    "title": "WordPress Developer",
+    "company": "ePlanet Communications",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "On-site",
+    "employment_type": "Full-time",
+    "experience_level": "Entry Level",
+    "salary_min": 50000,
+    "salary_max": 90000,
+    "currency": "PKR",
+    "description": "ePlanet is looking for a WordPress developer to build and customize websites for clients across Pakistan and internationally.",
+    "requirements": [
+      "WordPress theme/plugin development",
+      "PHP basics",
+      "HTML/CSS",
+      "MySQL"
+    ],
+    "skills": [
+      "WordPress",
+      "PHP",
+      "HTML",
+      "CSS",
+      "MySQL",
+      "JavaScript",
+      "Elementor"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Lunch",
+      "Training",
+      "Career growth"
+    ],
+    "posted_date": "2026-09-02",
+    "company_description": "ePlanet provides web and IT solutions to SMBs.",
+    "industry": "Web Development"
+  },
+  {
+    "id": "JOB-049",
+    "title": "Backend Python Developer",
+    "company": "Motive (KeepTruckin)",
+    "location": "Islamabad",
+    "country": "Pakistan",
+    "work_mode": "Remote",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 200000,
+    "salary_max": 350000,
+    "currency": "PKR",
+    "description": "Motive is a US-based company with an Islamabad engineering hub. Join our Python team to build fleet management software.",
+    "requirements": [
+      "Python + Django/FastAPI",
+      "PostgreSQL",
+      "Microservices",
+      "AWS"
+    ],
+    "skills": [
+      "Python",
+      "Django",
+      "FastAPI",
+      "PostgreSQL",
+      "AWS",
+      "Microservices",
+      "Docker"
+    ],
+    "benefits": [
+      "US-equivalent salary",
+      "Health insurance",
+      "Stock options",
+      "Remote-friendly"
+    ],
+    "posted_date": "2026-08-20",
+    "company_description": "Motive builds fleet management software for trucking companies.",
+    "industry": "Logistics Tech"
+  },
+  {
+    "id": "JOB-050",
+    "title": "Software Engineer - AI Integration",
+    "company": "Folio3",
+    "location": "Karachi",
+    "country": "Pakistan",
+    "work_mode": "Hybrid",
+    "employment_type": "Full-time",
+    "experience_level": "Mid Level",
+    "salary_min": 130000,
+    "salary_max": 230000,
+    "currency": "PKR",
+    "description": "Folio3 is integrating AI into enterprise products. We need a software engineer to build AI-powered features using LLMs and APIs.",
+    "requirements": [
+      "Python experience",
+      "OpenAI or Azure OpenAI",
+      "REST APIs",
+      "SQL"
+    ],
+    "skills": [
+      "Python",
+      "OpenAI API",
+      "FastAPI",
+      "SQL",
+      "Azure",
+      "Docker",
+      "LangChain"
+    ],
+    "benefits": [
+      "Hybrid work",
+      "Health insurance",
+      "Annual bonus",
+      "Skill development"
+    ],
+    "posted_date": "2026-08-26",
+    "company_description": "Folio3 is a global software company with 1200+ engineers.",
+    "industry": "Enterprise Software"
   }
 ]

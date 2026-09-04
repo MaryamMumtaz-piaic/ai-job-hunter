@@ -185,7 +185,6 @@ async def generate_cover_letter(request: Request):
         from app.services.openai_service import generate_cover_letter as ai_generate
         cover_letter = ai_generate(
             candidate_profile=latest_resume,
-            candidate_name=user.get("full_name", ""),
             job=job or {},
         )
 

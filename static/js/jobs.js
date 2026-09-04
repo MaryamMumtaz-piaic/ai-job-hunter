@@ -412,7 +412,7 @@ async function generateCoverLetter(jobId) {
   textarea.value = '';
 
   try {
-    const data = await window.api.post('/api/cover-letter/generate', { job_id: jobId });
+    const data = await window.api.post('/api/applications/cover-letter/generate', { job_id: jobId });
     coverLetterText = data.cover_letter || '';
     textarea.value = coverLetterText;
     textarea.disabled = false;
@@ -475,3 +475,4 @@ function escapeHtml(str) {
 window.openApplyFlow = openApplyFlow;
 window.toggleSaveJob = toggleSaveJob;
 window.openCoverLetterFlow = openCoverLetterFlow;
+window.selectJob = selectJob;
